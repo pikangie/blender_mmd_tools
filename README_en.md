@@ -40,28 +40,28 @@ Extract the archive and put the folder mmd__tools into the addon folder of blend
    (you can also find the addon my search)
 2. After installation, you can find the panel called MMD on the left of 3D view
 
-### MMDモデルデータ読み込み
-1. mmd_toolsパネルの"import/Model"ボタンを選択してください。
-2. ファイル選択画面でpmxファイルを選択すると、選択されたモデルをインポートします。
+### Loading MMD Model Data
+1. Choose the "import/Model" button of the "mmd_tools" panel.
+2. In the file selection, choose your pmx file, and it will import the selected model.
 
-### モーションデータの読み込み
-1. あらかじめ読み込んでおいたモデルのMeshとArmature、Cameraを選択してください。(選択していない項目はインポートされません)
-2. mmd_toolsパネルの"import/Motion"ボタンを選択してください。
-3. ファイル選択画面でvmdファイルを選択すると選択中のオブジェクトへモーションをインポートします。
-4. 「update scene settings」チェックボックスをオンにしておくと、モーションの読み込み後にフレームレンジ等のシーン設定を自動更新します。
+### Loading of Motion Data
+1. Before loading the mesh and armature, select the camera. (Only selected items wil be imported.)
+2. Select the "import / Motion" button of "mmd_tools" panel.
+3. Choose the vmd file in the file selection screen. It will import the motion to the objects in the selection.
+4. Check the "update scene settings" checkbox on. After reading the motion, things like the frame range and scene setting will automatically update.
 
 
-各種機能詳細
+Various Functional Settings
 -------------------------------
 ### Import Model
-MMDモデルデータをインポートします。対応形式はpmdファイルおよびpmx(ver2.0)ファイルです。
-各オプションはデフォルト推薦です。
-剛体情報を読み込みたくない場合は、"import only non dynamics rigid bodies"オプションをオンにしてください。
+Import the MMD model data. Supported formats are pmd files and pmx(ver2.0) files.
+Default options are recommended.
+If you do not want to read rigid imformation, select the option "import only non dynamics rigid bodies".
 
 * scale
-    * スケールです。Import Motion時のスケールと統一してください。
+    * It's the scale/sizing. Please match the imported motion.
 * rename bones
-    * ボーンの名前をblenderに適した名前にリネームします。（右腕→腕.Lなど）
+    * Rename bones to suitable names for Blender. (ex: 右腕 → arm.L)
 * hide rigid bodies and joints
     *  剛体情報を持つ各種オブジェクトを非表示にします。
 * import only non dynamics rigid bodies
@@ -129,7 +129,7 @@ GLSLボタンで変更した内容を初期状態に戻します。
 * blenderデフォルトの"Separate"→"By Material"機能を使用しています。
 
 
-その他
+Other
 ------
 * カメラとキャラクタモーションが別ファイルの場合は、ArmatureとMeshを選択してキャラモーション、Cameraを選択してカメラモーションというように2回に分けてインポートしてください。
 * モーションデータのインポート時はボーン名を利用して各ボーンにモーションを適用します。
@@ -147,7 +147,7 @@ GLSLボタンで変更した内容を初期状態に戻します。
 * 複数のpmxファイルをインポートする場合はscaleを統一してください。
 
 
-既知の問題
+Known Issues
 ----------
 * 剛体の非衝突グループを強引に解決しているため、剛体の数が多いモデルを読み込むとフリーズすることがあります。
     * 正確には完全なフリーズではなく、読み込みに異常な時間がかかっているだけです。
